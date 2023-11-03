@@ -1,8 +1,77 @@
 #game {
     width: 100%;
+    height: 700px;
     display: block;
+    margin-top: 10px;
+    background-color: grey;
+}
+
+#players {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin-top: 100px;
+    align-items: center;
+    position: absolute;
+    top: 500px;
+    
+}
+
+#player1 {
+    align-items: center;
+    position: absolute;
+    left: 300px;
 }
 
 #player2 {
     align-items: center;
+    position: absolute;
+    left: 1050px;
 }
+
+#instructions {
+    background-color: burlywood;
+}
+
+body {
+    background-color: darkgrey;
+}
+
+p {
+font-weight: bold;
+font-size: large;
+}
+
+@keyframes changeGif {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+input {
+    border: 3px solid black;
+}
+
+#bombContainer {
+    animation: changeGif 3s linear infinite;
+}
+
+#bombGif {
+    width: 300px;
+    object-fit: cover;
+    position: absolute;
+    left: 620px;
+    top: -160px;
+}
+
+#bombGif[src="Media/bomb.gif"] {
+    animation-delay: 0s;
+}
+
+#bombGif[src="Media/explotion.gif"] {
+    animation-delay: 3s;
+}
+

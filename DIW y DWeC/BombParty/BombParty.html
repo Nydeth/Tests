@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS.css">
     <title>BombParty</title>
-<script>
-
-</script>
 </head>
 <body>
-    <h1>BombParty!</h1>
-    <h3>Este juego se juega con dos jugadores</h3>
-    <h3>El primer jugador escribe una palabra y el siguiente ha de poner una que contenga los caracteres que se muestren dentro del tiempo.</h3>
-    <h4>¡Cada palabra escrita se bloqueará y solo tienes una vida!</h4>
+    <center>
+    <div id="instructions">
+        <h1>BombParty!</h1>
+        <h3>Este juego se juega con dos jugadores</h3>
+        <h3>El primer jugador escribe una palabra y el siguiente ha de poner una que contenga los caracteres que se
+            muestren dentro del tiempo.</h3>
+        <h4>¡Cada palabra escrita se bloqueará y solo tienes una vida!</h4>
+    </div>
 
     <div id="game">
-        <div id="player1">
-            <input type="text"></input>
-        </div>
-        <div id="player2">
-            <input type="text"></input>
+        <div id="players">
+            <div id="player1">
+                <p>Player 1:</p>
+                <input type="text"></input>
+            </div>
+            <div id="bombContainer">
+                <img src="Media/bomb.gif" id="bombGif" alt="bomb">
+            </div>
+            <div id="player2">
+                <p>Player 2:</p>
+                <input type="text"></input>
+            </div>
         </div>
     </div>
+</center>
+    <script>
+        var timer = 1500;
+        var duration = 900;
+        setTimeout(function() {
+            var bombGif = document.getElementById('bombGif');
+            bombGif.src = "Media/explotion.gif";
+            bombGif.style.animation = 'none';
+            setTimeout(function() {
+                bombGif.style.display = 'none';
+            }, duration);
+        }, timer);
+    </script>
 </body>
 </html>
